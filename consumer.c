@@ -27,7 +27,8 @@ void* consumer(void* arg){
 
     sleep(1);
 
-    for(int it=0; it < iteration; ++it){
+    for(int it=1; it <= iteration; ++it){
+
         sleep(1);
 
         sem_wait(&shmptr->mutex);
@@ -50,7 +51,7 @@ void* consumer(void* arg){
         sem_post(&shmptr->mutex); //not in CS so post mutex
     }
 
-    printf("Consumer Thread is done\n");
+    printf("Consumer Thread is done\n\n");
 
     shmdt(shmptr); //detach sharem mem buffer
     shmctl(sharedMem, IPC_RMID, NULL);   

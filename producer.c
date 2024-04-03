@@ -29,7 +29,8 @@ void* producer(void* arg){
     sem_init(&shmptr->mutex, 1, 1); // init to 1
     sem_init(&shmptr->empty, 1, SIZE);
 
-    for(int it=0; it < iteration; ++it){
+    for(int it=1; it <= iteration; ++it){
+        printf("Iteration %d\n", it);
         sleep(1);
         
         sem_wait(&shmptr->mutex); //ensuring mutual exclusion
