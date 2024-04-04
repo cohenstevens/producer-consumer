@@ -1,16 +1,5 @@
 #include "procon.h"
-//#include <fcntl.h>
-#include <unistd.h>
-#include <time.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/mman.h>
-#include <sys/stat.h>
-#include <sys/shm.h>
-#include <sys/types.h>
-#include <sys/ipc.h>
-#include <errno.h>
-#include <pthread.h>
+
 
 void* producer(void* arg){
     srand(time(NULL)); // random seed
@@ -29,7 +18,6 @@ void* producer(void* arg){
     sem_init(&shmptr->empty, 1, SIZE);
 
     for(int it=1; it <= iteration; ++it){
-        printf("Iteration %d\n", it);
         sleep(1);
         
         sem_wait(&shmptr->mutex); //ensuring mutual exclusion
