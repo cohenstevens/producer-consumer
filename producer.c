@@ -1,10 +1,9 @@
 #include "procon.h"
-#include <fcntl.h>
+//#include <fcntl.h>
 #include <unistd.h>
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
 #include <sys/shm.h>
@@ -58,15 +57,15 @@ void* producer(void* arg){
 
     sem_destroy(&shmptr->mutex); //destroying semaphores
     sem_destroy(&shmptr->empty);
-    shmdt(shmptr); //detach sharem mem buffer
+    shmdt(shmptr); //detach shared mem buffer
 }
 
 int main(){
 
     pthread_t pro;
 
-    pthread_create(&pro, NULL, producer, NULL);
-    pthread_join(pro, NULL);
+    pthread_create(&pro, NULL, producer, NULL); // creating a new thread 
+    pthread_join(pro, NULL); // waits for thread to terminate
 
     return 0;
 }

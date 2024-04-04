@@ -1,10 +1,9 @@
 #include "procon.h"
-#include <fcntl.h>
+//#include <fcntl.h>
 #include <unistd.h>
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
 #include <sys/shm.h>
@@ -31,7 +30,7 @@ void* consumer(void* arg){
 
         sleep(1);
 
-        sem_wait(&shmptr->mutex);
+        sem_wait(&shmptr->mutex); // 
         printf("Consumer entered CS\n");
 
         int i, j = 1;
@@ -54,7 +53,7 @@ void* consumer(void* arg){
     printf("Consumer Thread is done\n\n");
 
     shmdt(shmptr); //detach sharem mem buffer
-    shmctl(sharedMem, IPC_RMID, NULL);   
+    shmctl(sharedMem, IPC_RMID, NULL); // remove the shared memory buffer
 }
 
 int main(){
