@@ -18,7 +18,7 @@
 #define SIZE 2 // setting buffer size
 #define iteration 10 // setting num of iterations to go through
 
-#define KEY 0x1234 // shared memory key
+#define KEY 0x0325 // shared memory key
 
 struct table {
     sem_t mutex; // semaphore for mutual exclusion
