@@ -20,7 +20,7 @@ This marks my initial venture into coding in C. While I've had prior experience 
      ./producer & ./consumer &
 
 # Examples
-This example is set to have 5 iterations but this value is customizable along with the size of the table and the shared memory key.
+This example is set to have 5 iterations but this value is easily customizable along with the size of the table and the shared memory key.
 ![1](https://github.com/cohenstevens/producer-consumer/assets/150870554/85c44b5a-1698-48a6-a6b3-b7057eda7b4d)
 ![2](https://github.com/cohenstevens/producer-consumer/assets/150870554/64a06544-7bea-404e-b35e-702be0251b08)
 
