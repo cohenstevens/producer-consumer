@@ -7,7 +7,7 @@ This marks my initial venture into coding in C. While I've had prior experience 
 
 # Requirements
 - GCC Compiler
-- Linux OS (Testing conducted on Ubuntu within a Virtual Machine)
+- Linux OS
 
 # How To Run
  - Download or clone the repository
