@@ -13,6 +13,8 @@ This marks my initial venture into coding in C. While I've had prior experience 
  - Download or clone the repository
  - Compile the code:
      gcc producer.c -pthread -lrt -o producer
+   
      gcc consumer.c -pthread -lrt -o consumer
+   
      ./producer & ./consumer & 
 
